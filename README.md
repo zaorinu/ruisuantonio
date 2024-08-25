@@ -20,6 +20,8 @@
 
 <br>
 
+<a><img src="https://xxfoolishxx.wordpress.com/wp-content/uploads/2014/07/kawaii-footer.png?w=640">
+
 <p>
   
   [![trophy](https://github-profile-trophy.vercel.app/?username=ruisuan&theme=buddhism)](https://github.com/ruisuan/github-profile-trophy)
