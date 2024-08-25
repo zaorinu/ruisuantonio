@@ -20,7 +20,7 @@
 
 <br>
 
-<a><img src="https://xxfoolishxx.wordpress.com/wp-content/uploads/2014/07/kawaii-footer.png?w=640">
+<a><img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/profile-footer.webp">
 
 <p>
   
