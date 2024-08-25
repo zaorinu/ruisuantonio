@@ -1,16 +1,26 @@
-## Hi there 👋
+<h1>Hi 👋, I'm Ruisuan</h1>
+<h3>An multi-purpose developer from Brazil</h3>
 
-<!--
-**ruisuan/ruisuan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+<p>
+  
+  <img src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Gitea-34495E?style=for-the-badge&logo=gitea&logoColor=5D9425"/)
+  
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🌱 I’m currently learning **HTML5 CSS3 + JavaScript** and working for **CyonicSolutions**
+
+- 💬 Ask me about **BatchScript and Automations**
+
+- 📫 How to reach me **fynxcyonic@gmail.com**
+
+<br>
+
+<p>
+  
+  [![trophy](https://github-profile-trophy.vercel.app/?username=ruisuan&theme=buddhism)](https://github.com/ruisuan/github-profile-trophy)
+</p>
