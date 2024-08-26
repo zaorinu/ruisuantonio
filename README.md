@@ -4,11 +4,11 @@
 
 <p>
   
-  <img src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Gitea-34495E?style=for-the-badge&logo=gitea&logoColor=5D9425"/)
+  <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/profile-badges/neovim.svg"/>
+  <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/profile-badges/arch-linux.svg"/>
+  <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/profile-badges/css3.svg"/>
+  <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/profile-badges/html5.svg"/>
+  <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/profile-badges/gitea.svg"/)
   
 </p>
 
