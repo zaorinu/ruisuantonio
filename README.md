@@ -1,6 +1,5 @@
 <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/welcome.png" alt="png file">
 
-
 <p>
   
   <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/profile-badges/neovim.svg"/>
