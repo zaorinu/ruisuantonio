@@ -10,7 +10,9 @@
 </p>
 
 - 🌱 Atualmente estou aprendendo **HTML5 CSS3 + JavaScript** e trabalhando para **CyonicSolutions**
+  
 - 💬 Pergunte-me sobre **BatchScript e Automações**
+  
 - 📫 Como entrar em contato comigo **fynxcyonic@gmail.com**
 
 <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/profile-footer.webp">
