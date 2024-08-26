@@ -1,4 +1,4 @@
-🍙 Esta página tem suporte multilíngue: [English 🇺🇸](README.md) • [Português 🇧🇷](README-br.md)
+*🍙 Esta página tem suporte multilíngue: [English 🇺🇸](README.md) • [Português 🇧🇷](README-br.md)*
 
 <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/welcome/pt-br.png" alt="png file">
 <p>
