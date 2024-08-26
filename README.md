@@ -1,5 +1,4 @@
-<h1>Hi 👋, I'm Ruisuan</h1>
-<h3>An multi-purpose developer from Brazil</h3>
+<img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/gif/welcome.gif" alt="gif file">
 
 
 <p>
