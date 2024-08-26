@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/gif/welcome.gif" alt="gif file">
+<img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/welcome.png" alt="png file">
 
 
 <p>
