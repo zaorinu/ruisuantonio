@@ -15,6 +15,3 @@
   
 - 📫 Como entrar em contato comigo **fynxcyonic@gmail.com**
 
-<img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/profile-footer.webp">
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=ruisuan&theme=buddhism)](https://github.com/ruisuan/github-profile-trophy)
