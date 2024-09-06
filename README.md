@@ -13,4 +13,3 @@
 - 💬 Ask me about **BatchScript and Automations**
 
 - 📫 How to reach me **fynxcyonic@gmail.com**
-
