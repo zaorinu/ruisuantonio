@@ -9,7 +9,7 @@
   <img src="https://raw.githubusercontent.com/ruisuan/ruisuan/main/img/profile-badges/gitea.svg"/)
 </p>
 
-- 🌱 Atualmente estou aprendendo **HTML5 CSS3 + JavaScript** e trabalhando para **CyonicSolutions**
+- 🌱 Atualmente estou aprendendo **HTML5 CSS3 + JavaScript**
   
 - 💬 Pergunte-me sobre **BatchScript e Automações**
   
