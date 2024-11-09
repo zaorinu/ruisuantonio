@@ -1,0 +1,58 @@
+name: Metrics
+on:
+  schedule: [{cron: "0 2 * * 0"}]
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Run Metrics with Docker
+        run: |
+          docker run --rm \
+            --env INPUT_TOKEN=${{ secrets.METRICS_TOKEN }} \
+            --env INPUT_USER=ruisuantonio \
+            --env INPUT_TEMPLATE=classic \
+            --env INPUT_BASE=header,activity,community,repositories,metadata \
+            --env INPUT_BASE_INDEPTH=yes \
+            --env INPUT_COMMITS_AUTHORING=ruisuantonio \
+            --env INPUT_CONFIG_DISPLAY=large \
+            --env INPUT_CONFIG_OCTICON=yes \
+            --env INPUT_CONFIG_TIMEZONE=America/Sao_Paulo \
+            --env INPUT_PLUGIN_ANILIST=yes \
+            --env INPUT_PLUGIN_ANILIST_LIMIT=4 \
+            --env INPUT_PLUGIN_ANILIST_LIMIT_CHARACTERS=22 \
+            --env INPUT_PLUGIN_ANILIST_MEDIAS=manga \
+            --env INPUT_PLUGIN_ANILIST_SECTIONS=favorites \
+            --env INPUT_PLUGIN_ANILIST_SHUFFLE=yes \
+            --env INPUT_PLUGIN_ANILIST_USER=ruisuantonio \
+            --env INPUT_PLUGIN_GISTS=yes \
+            --env INPUT_PLUGIN_HABITS=yes \
+            --env INPUT_PLUGIN_HABITS_CHARTS_TYPE=graph \
+            --env INPUT_PLUGIN_HABITS_DAYS=14 \
+            --env INPUT_PLUGIN_HABITS_FACTS=yes \
+            --env INPUT_PLUGIN_HABITS_FROM=200 \
+            --env INPUT_PLUGIN_HABITS_LANGUAGES_LIMIT=8 \
+            --env INPUT_PLUGIN_HABITS_LANGUAGES_THRESHOLD=0% \
+            --env INPUT_PLUGIN_INTRODUCTION=yes \
+            --env INPUT_PLUGIN_INTRODUCTION_TITLE=yes \
+            --env INPUT_PLUGIN_LANGUAGES=yes \
+            --env INPUT_PLUGIN_LANGUAGES_ANALYSIS_TIMEOUT=15 \
+            --env INPUT_PLUGIN_LANGUAGES_ANALYSIS_TIMEOUT_REPOSITORIES=7.5 \
+            --env INPUT_PLUGIN_LANGUAGES_CATEGORIES=markup,programming \
+            --env INPUT_PLUGIN_LANGUAGES_COLORS=github \
+            --env INPUT_PLUGIN_LANGUAGES_LIMIT=8 \
+            --env INPUT_PLUGIN_LANGUAGES_RECENT_CATEGORIES=markup,programming \
+            --env INPUT_PLUGIN_LANGUAGES_RECENT_DAYS=14 \
+            --env INPUT_PLUGIN_LANGUAGES_RECENT_LOAD=300 \
+            --env INPUT_PLUGIN_LANGUAGES_SECTIONS=most-used \
+            --env INPUT_PLUGIN_LANGUAGES_THRESHOLD=0% \
+            --env INPUT_PLUGIN_LINES=yes \
+            --env INPUT_PLUGIN_LINES_HISTORY_LIMIT=1 \
+            --env INPUT_PLUGIN_LINES_REPOSITORIES_LIMIT=4 \
+            --env INPUT_PLUGIN_LINES_SECTIONS=base \
+            --volume=/tmp:/renders \
+            ghcr.io/lowlighter/metrics:latest
