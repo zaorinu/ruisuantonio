@@ -57,8 +57,12 @@ jobs:
             --volume=/tmp:/renders \
             ghcr.io/lowlighter/metrics:latest
 
+      - name: Rename the generated file
+        run: |
+          mv /renders/github-metrics.svg /renders/metrics.svg  # Renomeia o arquivo gerado
+
       - name: Upload Metrics as artifact
         uses: actions/upload-artifact@v3
         with:
           name: metrics-svg
-          path: /tmp/metrics.svg
+          path: /renders/metrics.svg  # Caminho do arquivo renomeado
