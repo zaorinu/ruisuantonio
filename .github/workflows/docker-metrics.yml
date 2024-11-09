@@ -1,5 +1,4 @@
-name: Metrics (Docker)
-
+name: Metrics
 on:
   schedule: [{cron: "0 2 * * 0"}]
   workflow_dispatch:
@@ -10,10 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
-
     steps:
-      # Passo 1: Executar Metrics com Docker
       - name: Run Metrics with Docker
         run: |
           docker run --rm \
@@ -22,23 +18,14 @@ jobs:
             --env INPUT_TEMPLATE=classic \
             --env INPUT_BASE=header,activity,community,repositories,metadata \
             --env INPUT_BASE_INDEPTH=yes \
+            --env INPUT_COMMITS_AUTHORING=ruisuantonio \
             --env INPUT_CONFIG_DISPLAY=large \
             --env INPUT_CONFIG_OCTICON=yes \
             --env INPUT_CONFIG_TIMEZONE=America/Sao_Paulo \
-            --env INPUT_PLUGIN_ACHIEVEMENTS=yes \
-            --env INPUT_PLUGIN_ACHIEVEMENTS_DISPLAY=compact \
-            --env INPUT_PLUGIN_ACHIEVEMENTS_SECRETS=yes \
-            --env INPUT_PLUGIN_ACHIEVEMENTS_THRESHOLD=X \
-            --env INPUT_PLUGIN_ACTIVITY=yes \
-            --env INPUT_PLUGIN_ACTIVITY_DAYS=14 \
-            --env INPUT_PLUGIN_ACTIVITY_FILTER=all \
-            --env INPUT_PLUGIN_ACTIVITY_LIMIT=5 \
-            --env INPUT_PLUGIN_ACTIVITY_LOAD=300 \
-            --env INPUT_PLUGIN_ACTIVITY_VISIBILITY=all \
             --env INPUT_PLUGIN_ANILIST=yes \
-            --env INPUT_PLUGIN_ANILIST_LIMIT=2 \
+            --env INPUT_PLUGIN_ANILIST_LIMIT=4 \
             --env INPUT_PLUGIN_ANILIST_LIMIT_CHARACTERS=22 \
-            --env INPUT_PLUGIN_ANILIST_MEDIAS=anime,manga \
+            --env INPUT_PLUGIN_ANILIST_MEDIAS=manga \
             --env INPUT_PLUGIN_ANILIST_SECTIONS=favorites \
             --env INPUT_PLUGIN_ANILIST_SHUFFLE=yes \
             --env INPUT_PLUGIN_ANILIST_USER=ruisuantonio \
@@ -52,8 +39,6 @@ jobs:
             --env INPUT_PLUGIN_HABITS_LANGUAGES_THRESHOLD=0% \
             --env INPUT_PLUGIN_INTRODUCTION=yes \
             --env INPUT_PLUGIN_INTRODUCTION_TITLE=yes \
-            --env INPUT_PLUGIN_ISOCALENDAR=yes \
-            --env INPUT_PLUGIN_ISOCALENDAR_DURATION=half-year \
             --env INPUT_PLUGIN_LANGUAGES=yes \
             --env INPUT_PLUGIN_LANGUAGES_ANALYSIS_TIMEOUT=15 \
             --env INPUT_PLUGIN_LANGUAGES_ANALYSIS_TIMEOUT_REPOSITORIES=7.5 \
@@ -65,42 +50,15 @@ jobs:
             --env INPUT_PLUGIN_LANGUAGES_RECENT_LOAD=300 \
             --env INPUT_PLUGIN_LANGUAGES_SECTIONS=most-used \
             --env INPUT_PLUGIN_LANGUAGES_THRESHOLD=0% \
-            --env INPUT_PLUGIN_LEETCODE=yes \
-            --env INPUT_PLUGIN_LEETCODE_LIMIT_RECENT=2 \
-            --env INPUT_PLUGIN_LEETCODE_LIMIT_SKILLS=10 \
-            --env INPUT_PLUGIN_LEETCODE_SECTIONS=solved \
-            --env INPUT_PLUGIN_LEETCODE_USER=ruisuantonio \
             --env INPUT_PLUGIN_LINES=yes \
             --env INPUT_PLUGIN_LINES_HISTORY_LIMIT=1 \
             --env INPUT_PLUGIN_LINES_REPOSITORIES_LIMIT=4 \
             --env INPUT_PLUGIN_LINES_SECTIONS=base \
-            --env INPUT_PLUGIN_NOTABLE=yes \
-            --env INPUT_PLUGIN_NOTABLE_FROM=organization \
-            --env INPUT_PLUGIN_NOTABLE_TYPES=commit \
-            --env INPUT_PLUGIN_WAKATIME=yes \
-            --env INPUT_PLUGIN_WAKATIME_DAYS=7 \
-            --env INPUT_PLUGIN_WAKATIME_LIMIT=5 \
-            --env INPUT_PLUGIN_WAKATIME_REPOSITORIES_VISIBILITY=all \
-            --env INPUT_PLUGIN_WAKATIME_SECTIONS=time,projects,projects-graphs,languages,languages-graphs,editors,os \
-            --env INPUT_PLUGIN_WAKATIME_URL=https://wakatime.com \
-            --env INPUT_PLUGIN_WAKATIME_USER=ruisuantonio \
             --volume=/tmp:/renders \
             ghcr.io/lowlighter/metrics:latest
 
-      # Passo 2: Enviar para o Gist (Arquivo Gerado)
-      - name: Upload Metrics to Gist
-        uses: lowlighter/metrics@latest
+      - name: Upload Metrics as artifact
+        uses: actions/upload-artifact@v3
         with:
-          output_action: gist
-          committer_gist: c349ae4efae4b3c2608d8f45b48e7ea7
-          filename: metrics.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-
-      # Passo 3: Enviar para o Gist (Arquivo Otimizado, se necessário)
-      - name: Upload Optimized Metrics to Gist
-        uses: lowlighter/metrics@latest
-        with:
-          output_action: gist
-          committer_gist: c349ae4efae4b3c2608d8f45b48e7ea7
-          filename: metrics-optimized.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          name: metrics-svg
+          path: /tmp/metrics.svg
