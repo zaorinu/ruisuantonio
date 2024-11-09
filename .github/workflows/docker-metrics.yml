@@ -59,6 +59,7 @@ jobs:
 
       - name: Check file and rename it
         run: |
+          find / -name "*metrics*.svg"
           ls /metrics_renders  # Verifica o conteúdo do diretório /renders
           mv /metrics_renders/github-metrics.svg /metrics_renders/metrics.svg || echo "File not found, skipping rename"  # Tenta renomear, mas ignora erro se não encontrado
 
