@@ -1,4 +1,4 @@
-name: Metrics
+name: Metrics (Docker)
 on:
   schedule: [{cron: "0 2 * * 0"}]
   workflow_dispatch:
@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Run Metrics with Docker
         run: |
@@ -56,3 +57,22 @@ jobs:
             --env INPUT_PLUGIN_LINES_SECTIONS=base \
             --volume=/tmp:/renders \
             ghcr.io/lowlighter/metrics:latest
+
+      - name: Upload Metrics to Gist
+        uses: lowlighter/metrics@latest
+        with:
+          output_action: gist
+          committer_gist: c349ae4efae4b3c2608d8f45b48e7ea7
+          filename: metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          optimize: css, xml  # Otimiza CSS e XML
+          
+      - name: Upload Optimized Metrics to Gist
+        uses: lowlighter/metrics@latest
+        with:
+          output_action: gist
+          committer_gist: c349ae4efae4b3c2608d8f45b48e7ea7
+          filename: metrics-optimized.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          optimize: svg  # Otimiza o próprio SVG (experimental)
+          experimental_features: --optimize-svg
