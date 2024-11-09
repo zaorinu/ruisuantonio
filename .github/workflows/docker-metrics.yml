@@ -1,4 +1,5 @@
 name: Metrics (Docker) V
+
 on:
   schedule: [{cron: "0 2 * * 0"}]
   workflow_dispatch:
@@ -11,6 +12,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      # Passo 1: Executar Metrics com Docker
       - name: Run Metrics with Docker
         run: |
           docker run --rm \
@@ -58,6 +60,7 @@ jobs:
             --volume=/tmp:/renders \
             ghcr.io/lowlighter/metrics:latest
 
+      # Passo 2: Enviar para o Gist (arquivo original)
       - name: Upload Metrics to Gist
         uses: lowlighter/metrics@latest
         with:
@@ -66,7 +69,8 @@ jobs:
           filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           optimize: css, xml  # Otimiza CSS e XML
-          
+
+      # Passo 3: Enviar para o Gist (SVG otimizado)
       - name: Upload Optimized Metrics to Gist
         uses: lowlighter/metrics@latest
         with:
