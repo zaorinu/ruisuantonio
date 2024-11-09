@@ -59,11 +59,11 @@ jobs:
 
       - name: Check file and rename it
         run: |
-          ls /renders  # Verifica o conteúdo do diretório /renders
-          mv /renders/github-metrics.svg /renders/metrics.svg || echo "File not found, skipping rename"  # Tenta renomear, mas ignora erro se não encontrado
+          ls /metrics_renders  # Verifica o conteúdo do diretório /renders
+          mv /metrics_renders/github-metrics.svg /metrics_renders/metrics.svg || echo "File not found, skipping rename"  # Tenta renomear, mas ignora erro se não encontrado
 
       - name: Upload Metrics as artifact
         uses: actions/upload-artifact@v3
         with:
           name: metrics-svg
-          path: /renders/metrics.svg
+          path: /metrics_renders/metrics.svg
